@@ -34,7 +34,7 @@ public class PremiosController {
         }
     }
 
-    @PutMapping("/actualizarpremio")
+    @PutMapping("/actualizarpremio/{id}")
     public ResponseEntity<PremiosDTO>actualizarPremio(@PathVariable Long id, @RequestBody PremiosDTO premiodto){
         try{
             PremiosDTO nuevoact = premiosService.actualizarPremio(id, premiodto);
@@ -49,7 +49,7 @@ public class PremiosController {
         }
     }
 
-    @DeleteMapping("/eliminarpremio")
+    @DeleteMapping("/eliminarpremio/{id}")
     public ResponseEntity<String>eliminarPremio(@PathVariable Long id){
         try{
             boolean eliminado = premiosService.eliminarPremio(id);
