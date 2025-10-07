@@ -8,12 +8,21 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @RestController
 @RequestMapping("api/premios")
 public class PremiosController {
 
     @Autowired
     private PremiosService premiosService;
+
+    @GetMapping("/obtenerPremios")
+    public List<PremiosDTO> obtenerPremios(){
+        return premiosService.obtenerPremios();
+    }
 
     @PostMapping("/agregarpremio")
     public ResponseEntity<PremiosDTO>ingresarPremio(@RequestBody PremiosDTO premiodto){
