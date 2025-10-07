@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("api/premios")
-@CrossOrigin
+@CrossOrigin("*")
 public class PremiosController {
 
     @Autowired
